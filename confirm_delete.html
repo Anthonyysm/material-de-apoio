@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block title %}Deletar Post{% endblock %}
+
+{% block content %}
+<div class="post-card p-5 text-center">
+    <i class="bi bi-exclamation-triangle d-block mb-3" style="font-size: 3rem; color: #dc3545; opacity: 0.7;"></i>
+    <h5 class="fw-bold mb-3">Deletar post?</h5>
+    <p class="text-muted mb-4">"{{ object.content }}"</p>
+    <form method="post">
+        {% csrf_token %}
+        <a href="{% url 'feed' %}" class="btn btn-outline-secondary rounded-pill">Cancelar</a>
+        <button type="submit" class="btn btn-danger rounded-pill">Sim, deletar</button>
+    </form>
+</div>
+{% endblock %}
